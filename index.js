@@ -61,5 +61,5 @@ async function runBenchmark(numGames) {
   );
 }
 
-const numGames = 100; // You can adjust this number
+const numGames = 1; // You can adjust this number
 runBenchmark(numGames);

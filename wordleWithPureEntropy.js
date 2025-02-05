@@ -38,7 +38,7 @@ async function playWordleWithPureEntropy(seed) {
   return { isCorrect, attempts: attempt };
 }
 
-function generateGuessWord() {
+function generateGuessWord(gameState) {
   let bestWords = [];
   let maxEntropy = -Infinity;
 
