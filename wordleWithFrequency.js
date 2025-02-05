@@ -1,4 +1,5 @@
 import axios from "axios";
+import { retryWithDelay, axiosWithRetry } from "./utils.js";
 
 const API_URL = "https://wordle.votee.dev:8000/random";
 const RANDOM_WORD_API = "https://random-word-api.herokuapp.com/all";
@@ -130,10 +131,16 @@ function getPattern(guess, actual) {
 }
 
 async function makeGuess(guessWord, seed) {
-  const response = await axios.get(API_URL, {
-    params: { guess: guessWord, size: WORD_LENGTH, seed: seed },
-  });
-  return response.data;
+  return retryWithDelay(
+    async () => {
+      const response = await axiosWithRetry.get(API_URL, {
+        params: { guess: guessWord, size: WORD_LENGTH, seed: seed },
+      });
+      return response.data;
+    },
+    3,
+    1000
+  );
 }
 
 function updateGameState(gameState, result) {

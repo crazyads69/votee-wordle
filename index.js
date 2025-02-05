@@ -1,6 +1,7 @@
 import { playWordleWithFrequency } from "./wordleWithFrequency.js";
 import { playWordleWithPureEntropy } from "./wordleWithPureEntropy.js";
 import { playWordleWithGreedy } from "./wordleWithGreedy.js";
+import { delay } from "./utils.js";
 
 async function runBenchmark(numGames) {
   const results = {
@@ -29,6 +30,7 @@ async function runBenchmark(numGames) {
     console.log(`Pure Entropy: ${pureEntropyResult.attempts} attempts`);
     console.log(`Greedy: ${greedyResult.attempts} attempts`);
     console.log("---");
+    await delay(2000);
   }
 
   console.log("\nResults:");
