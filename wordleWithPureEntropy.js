@@ -38,19 +38,21 @@ async function playWordleWithPureEntropy(seed) {
   return { isCorrect, attempts: attempt };
 }
 
-function generateGuessWord(gameState) {
-  let bestWord = "";
+function generateGuessWord() {
+  let bestWords = [];
   let maxEntropy = -Infinity;
 
   for (const word of gameState.possibleWords) {
     const entropy = calculateEntropy(word, gameState.possibleWords);
     if (entropy > maxEntropy) {
       maxEntropy = entropy;
-      bestWord = word;
+      bestWords = [word];
+    } else if (entropy === maxEntropy) {
+      bestWords.push(word);
     }
   }
-
-  return bestWord;
+  const chosenWord = bestWords[Math.floor(Math.random() * bestWords.length)];
+  return chosenWord;
 }
 
 function calculateEntropy(word, possibleWords) {
