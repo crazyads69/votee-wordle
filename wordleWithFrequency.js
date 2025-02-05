@@ -166,4 +166,4 @@ function updateGameState(gameState, result) {
   return isCorrect;
 }
 
-module.exports = { playWordleWithFrequency };
+export { playWordleWithFrequency };

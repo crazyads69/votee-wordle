@@ -127,4 +127,4 @@ function updateGameState(gameState, result) {
   return isCorrect;
 }
 
-module.exports = { playWordleWithPureEntropy };
+export { playWordleWithPureEntropy };

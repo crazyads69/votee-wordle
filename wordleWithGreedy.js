@@ -78,4 +78,4 @@ function updateGameState(gameState, result) {
   return isCorrect;
 }
 
-module.exports = { playWordleWithGreedy };
+export { playWordleWithGreedy };
