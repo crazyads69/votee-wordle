@@ -1,6 +1,6 @@
 # Cracking the Wordle Code: My Journey Through the Votee AI Code Test
 
-As I opened the email from Votee AI, my heart raced with excitement. The challenge before me was clear: create a program that could solve Wordle puzzles automatically. With one week to complete the task, I knew I had to dive in headfirst.
+As I opened the message from Votee AI, my heart raced with excitement. The challenge before me was clear: create a program that could solve Wordle puzzles automatically. With one week to complete the task, I knew I had to dive in headfirst.
 
 ---
 
